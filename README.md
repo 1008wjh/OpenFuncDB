@@ -1,2 +1,3 @@
 # OpenFuncDB
-AI 智能体安全网络数据库 - 为AI智能体提供安全合规的Linux/Python/Git/Shell等技术数据API
+AI 智能体与自动化工具的安全函数数据库 API，为大模型与自动化工具提供可信、可执行、无风险的技术指令集。
+
