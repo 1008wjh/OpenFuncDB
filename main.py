@@ -21,7 +21,7 @@ async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
     db = SessionLocal()
     try:
-        admin = db.query(User).filter(User.username == "admin").first()
+        admin = db.query(User).filter(User.username == settings.ADMIN_USERNAME).first()
         if not admin:
             user_crud.create_with_password(
                 db, username=settings.ADMIN_USERNAME, password=settings.ADMIN_PASSWORD, auth_level="super_admin"

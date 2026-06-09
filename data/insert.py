@@ -39,7 +39,7 @@ def step2_clean_and_import():
 
     # ---------- 数据源 1: Python 内置函数 ----------
     print("\n" + "=" * 60)
-    print("📦 数据源 1/6: Python 内置函数")
+    print("[PKG] 数据源 1/6: Python 内置函数")
     print("=" * 60)
     cleaned_path = os.path.join(CLEANED_DIR, "python_builtin.json")
     if os.path.exists(RAW_PATH):
@@ -49,7 +49,7 @@ def step2_clean_and_import():
 
     # ---------- 数据源 2: Python 标准库 ----------
     print("\n" + "=" * 60)
-    print("📦 数据源 2/6: Python 标准库 (os/sys/pathlib/re/json 等)")
+    print("[PKG] 数据源 2/6: Python 标准库 (os/sys/pathlib/re/json 等)")
     print("=" * 60)
     stdlib_path = os.path.join(SOURCE_DIR, "python_stdlib.json")
     if os.path.exists(stdlib_path):
@@ -63,7 +63,7 @@ def step2_clean_and_import():
 
     # ---------- 数据源 3: Python 数据科学 ----------
     print("\n" + "=" * 60)
-    print("📦 数据源 3/6: Python 数据科学 (Pandas/NumPy)")
+    print("[PKG] 数据源 3/6: Python 数据科学 (Pandas/NumPy)")
     print("=" * 60)
     ds_path = os.path.join(SOURCE_DIR, "python_datascience.json")
     if os.path.exists(ds_path):
@@ -77,7 +77,7 @@ def step2_clean_and_import():
 
     # ---------- 数据源 4: Linux 命令 ----------
     print("\n" + "=" * 60)
-    print("📦 数据源 4/6: Linux 命令")
+    print("[PKG] 数据源 4/6: Linux 命令")
     print("=" * 60)
     linux_path = os.path.join(SOURCE_DIR, "linux_commands.json")
     if os.path.exists(linux_path):
@@ -91,7 +91,7 @@ def step2_clean_and_import():
 
     # ---------- 数据源 5: Git 命令 ----------
     print("\n" + "=" * 60)
-    print("📦 数据源 5/6: Git 命令")
+    print("[PKG] 数据源 5/6: Git 命令")
     print("=" * 60)
     git_path = os.path.join(SOURCE_DIR, "git_commands.json")
     if os.path.exists(git_path):
@@ -105,7 +105,7 @@ def step2_clean_and_import():
 
     # ---------- 数据源 6: Java 常用 ----------
     print("\n" + "=" * 60)
-    print("📦 数据源 6/6: Java 常用类和方法")
+    print("[PKG] 数据源 6/6: Java 常用类和方法")
     print("=" * 60)
     java_path = os.path.join(SOURCE_DIR, "java_common.json")
     if os.path.exists(java_path):
@@ -139,7 +139,7 @@ def step3_import_all():
             continue
 
         print(f"\n{'='*60}")
-        print(f"📥 入库: {name}")
+        print(f"[IMP] 入库: {name}")
         print(f"{'='*60}")
 
         with open(fpath, "r", encoding="utf-8") as f:
@@ -154,23 +154,23 @@ def step3_import_all():
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("🚀 OpenFuncDB 数据导入流水线")
+    print(" OpenFuncDB 数据导入流水线")
     print("=" * 60)
 
     # Step 1: 解析官方文档
-    print("\n📋 Step 1: 解析 Python 官方文档")
+    print("\n[LIST] Step 1: 解析 Python 官方文档")
     step1_parse_python_builtins()
 
     # Step 2: 清洗所有数据源
-    print("\n📋 Step 2: 清洗所有数据源")
+    print("\n[LIST] Step 2: 清洗所有数据源")
     ensure_cleaned_dir()
     step2_clean_and_import()
 
     # Step 3: 入库
-    print("\n📋 Step 3: 入库")
+    print("\n[LIST] Step 3: 入库")
     totals = step3_import_all()
 
     print("\n" + "=" * 60)
-    print(f"🎉 全部完成！")
+    print(f"[DONE] 全部完成！")
     print(f"   新增: {totals['inserted']}, 更新: {totals['updated']}, 跳过: {totals['skipped']}")
     print("=" * 60)

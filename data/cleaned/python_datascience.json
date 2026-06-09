@@ -1,0 +1,642 @@
+[
+  {
+    "func_type": "Python",
+    "func_name": "df.agg",
+    "func_content": "DataFrame.agg(func, axis=0)",
+    "func_desc": "应用聚合函数，可用列表传入多个函数",
+    "func_params": "func, axis",
+    "func_return": "DataFrame or Series",
+    "is_safe": true,
+    "category": "pandas 聚合"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.apply",
+    "func_content": "DataFrame.apply(func, axis=0)",
+    "func_desc": "按行或列应用函数",
+    "func_params": "func, axis",
+    "func_return": "DataFrame or Series",
+    "is_safe": true,
+    "category": "pandas 聚合"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.astype",
+    "func_content": "DataFrame.astype(dtype)",
+    "func_desc": "转换列的数据类型",
+    "func_params": "dtype",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 转换"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.at",
+    "func_content": "DataFrame.at[row_label, column_label]",
+    "func_desc": "按标签快速访问单个值",
+    "func_params": "row_label, column_label",
+    "func_return": "scalar",
+    "is_safe": true,
+    "category": "pandas 索引"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.columns",
+    "func_content": "DataFrame.columns",
+    "func_desc": "获取列名 Index 对象",
+    "func_params": "",
+    "func_return": "Index",
+    "is_safe": true,
+    "category": "pandas 核心"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.describe",
+    "func_content": "DataFrame.describe(percentiles=None)",
+    "func_desc": "生成数值列的统计摘要（计数、均值、标准差、分位数等）",
+    "func_params": "percentiles, include, exclude",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 核心"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.drop",
+    "func_content": "DataFrame.drop(labels, axis=0, inplace=False)",
+    "func_desc": "删除行或列",
+    "func_params": "labels, axis, inplace",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 操作"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.drop_duplicates",
+    "func_content": "DataFrame.drop_duplicates(subset=None, keep='first', inplace=False)",
+    "func_desc": "删除重复行",
+    "func_params": "subset, keep, inplace",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 操作"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.dropna",
+    "func_content": "DataFrame.dropna(axis=0, how='any')",
+    "func_desc": "删除含缺失值的行或列",
+    "func_params": "axis, how, thresh, subset",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 操作"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.dtypes",
+    "func_content": "DataFrame.dtypes",
+    "func_desc": "获取每列的数据类型",
+    "func_params": "",
+    "func_return": "Series",
+    "is_safe": true,
+    "category": "pandas 核心"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.fillna",
+    "func_content": "DataFrame.fillna(value, method=None, inplace=False)",
+    "func_desc": "填充缺失值",
+    "func_params": "value, method, inplace",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 操作"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.groupby",
+    "func_content": "DataFrame.groupby(by, axis=0, as_index=True)",
+    "func_desc": "分组操作，返回 GroupBy 对象",
+    "func_params": "by, axis, as_index",
+    "func_return": "GroupBy",
+    "is_safe": true,
+    "category": "pandas 聚合"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.head",
+    "func_content": "DataFrame.head(n=5)",
+    "func_desc": "查看 DataFrame 的前 n 行",
+    "func_params": "n",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 核心"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.iat",
+    "func_content": "DataFrame.iat[row_pos, col_pos]",
+    "func_desc": "按整数位置快速访问单个值",
+    "func_params": "row_pos, col_pos",
+    "func_return": "scalar",
+    "is_safe": true,
+    "category": "pandas 索引"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.iloc",
+    "func_content": "DataFrame.iloc[row_indexer, column_indexer]",
+    "func_desc": "按整数位置索引访问数据",
+    "func_params": "row_indexer, column_indexer",
+    "func_return": "Series or DataFrame",
+    "is_safe": true,
+    "category": "pandas 索引"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.info",
+    "func_content": "DataFrame.info(verbose=True)",
+    "func_desc": "打印 DataFrame 的摘要信息（列名、非空数、数据类型）",
+    "func_params": "verbose",
+    "func_return": "None",
+    "is_safe": true,
+    "category": "pandas 核心"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.join",
+    "func_content": "DataFrame.join(other, on=None, how='left')",
+    "func_desc": "按索引连接另一个 DataFrame",
+    "func_params": "other, on, how, lsuffix, rsuffix",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 合并"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.loc",
+    "func_content": "DataFrame.loc[row_indexer, column_indexer]",
+    "func_desc": "按标签索引访问数据（行和列）",
+    "func_params": "row_indexer, column_indexer",
+    "func_return": "Series or DataFrame",
+    "is_safe": true,
+    "category": "pandas 索引"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.merge",
+    "func_content": "DataFrame.merge(right, how='inner', on=None)",
+    "func_desc": "与另一个 DataFrame 合并（同 pd.merge）",
+    "func_params": "right, how, on, left_on, right_on",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 合并"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.pivot",
+    "func_content": "DataFrame.pivot(*, columns, index=None, values=None)",
+    "func_desc": "将长表转换为宽表",
+    "func_params": "columns, index, values",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 重塑"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.query",
+    "func_content": "DataFrame.query(expr)",
+    "func_desc": "使用字符串表达式过滤行，如 df.query('age > 30')",
+    "func_params": "expr",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 索引"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.rename",
+    "func_content": "DataFrame.rename(mapper=None, columns=None, index=None)",
+    "func_desc": "重命名列或索引",
+    "func_params": "mapper, columns, index",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 操作"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.resample",
+    "func_content": "DataFrame.resample(rule, closed=None, label=None)",
+    "func_desc": "时间序列重采样（如 日→月）",
+    "func_params": "rule, closed, label",
+    "func_return": "Resampler",
+    "is_safe": true,
+    "category": "pandas 时间"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.shape",
+    "func_content": "DataFrame.shape",
+    "func_desc": "返回 DataFrame 的维度 (行数, 列数)",
+    "func_params": "",
+    "func_return": "tuple",
+    "is_safe": true,
+    "category": "pandas 核心"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.sort_index",
+    "func_content": "DataFrame.sort_index(axis=0, ascending=True, inplace=False)",
+    "func_desc": "按索引排序",
+    "func_params": "axis, ascending, inplace",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 操作"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.sort_values",
+    "func_content": "DataFrame.sort_values(by, ascending=True, inplace=False)",
+    "func_desc": "按列值排序",
+    "func_params": "by, ascending, inplace, na_position",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 操作"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.stack",
+    "func_content": "DataFrame.stack(level=-1, dropna=True)",
+    "func_desc": "将列转换为行（堆叠）",
+    "func_params": "level, dropna",
+    "func_return": "DataFrame or Series",
+    "is_safe": true,
+    "category": "pandas 重塑"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.tail",
+    "func_content": "DataFrame.tail(n=5)",
+    "func_desc": "查看 DataFrame 的后 n 行",
+    "func_params": "n",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 核心"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.to_csv",
+    "func_content": "DataFrame.to_csv(path, sep=',', index=True)",
+    "func_desc": "将 DataFrame 写入 CSV 文件",
+    "func_params": "path, sep, index, encoding",
+    "func_return": "None or str",
+    "is_safe": true,
+    "category": "pandas IO"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.to_excel",
+    "func_content": "DataFrame.to_excel(excel_writer, sheet_name='Sheet1', index=True)",
+    "func_desc": "将 DataFrame 写入 Excel 文件",
+    "func_params": "excel_writer, sheet_name, index",
+    "func_return": "None",
+    "is_safe": true,
+    "category": "pandas IO"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.to_json",
+    "func_content": "DataFrame.to_json(path, orient=None)",
+    "func_desc": "将 DataFrame 序列化为 JSON",
+    "func_params": "path, orient",
+    "func_return": "str or None",
+    "is_safe": true,
+    "category": "pandas IO"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.to_sql",
+    "func_content": "DataFrame.to_sql(name, con, if_exists='fail', index=True)",
+    "func_desc": "将 DataFrame 写入 SQL 数据库表",
+    "func_params": "name, con, if_exists, index",
+    "func_return": "None",
+    "is_safe": true,
+    "category": "pandas IO"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.unstack",
+    "func_content": "DataFrame.unstack(level=-1, fill_value=None)",
+    "func_desc": "将行转换为列（展开）",
+    "func_params": "level, fill_value",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 重塑"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "df.value_counts",
+    "func_content": "DataFrame.value_counts(subset=None, normalize=False, sort=True)",
+    "func_desc": "统计唯一值的出现频率",
+    "func_params": "subset, normalize, sort, ascending",
+    "func_return": "Series",
+    "is_safe": true,
+    "category": "pandas 聚合"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.arange",
+    "func_content": "np.arange(start=0, stop, step=1)",
+    "func_desc": "创建等差数列数组",
+    "func_params": "start, stop, step",
+    "func_return": "ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.argsort",
+    "func_content": "np.argsort(a, axis=-1)",
+    "func_desc": "返回排序后元素在原数组中的索引",
+    "func_params": "a, axis",
+    "func_return": "ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.array",
+    "func_content": "np.array(object, dtype=None)",
+    "func_desc": "创建 NumPy 数组",
+    "func_params": "object, dtype",
+    "func_return": "ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.concatenate",
+    "func_content": "np.concatenate(arrays, axis=0)",
+    "func_desc": "沿指定轴拼接数组",
+    "func_params": "arrays, axis",
+    "func_return": "ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.dot",
+    "func_content": "np.dot(a, b)",
+    "func_desc": "矩阵点积（内积）",
+    "func_params": "a, b",
+    "func_return": "scalar or ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.linspace",
+    "func_content": "np.linspace(start, stop, num=50)",
+    "func_desc": "创建等间距数组",
+    "func_params": "start, stop, num",
+    "func_return": "ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.mean",
+    "func_content": "np.mean(a, axis=None)",
+    "func_desc": "计算数组平均值",
+    "func_params": "a, axis",
+    "func_return": "float or ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.ones",
+    "func_content": "np.ones(shape, dtype=float)",
+    "func_desc": "创建全一数组",
+    "func_params": "shape, dtype",
+    "func_return": "ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.random.randn",
+    "func_content": "np.random.randn(d0, d1, ..., dn)",
+    "func_desc": "从标准正态分布中生成随机数",
+    "func_params": "d0, d1, ..., dn",
+    "func_return": "ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.random.seed",
+    "func_content": "np.random.seed(seed)",
+    "func_desc": "设置随机种子",
+    "func_params": "seed",
+    "func_return": "None",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.reshape",
+    "func_content": "np.reshape(a, newshape)",
+    "func_desc": "改变数组形状而不改变数据",
+    "func_params": "a, newshape",
+    "func_return": "ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.sum",
+    "func_content": "np.sum(a, axis=None)",
+    "func_desc": "计算数组元素和",
+    "func_params": "a, axis",
+    "func_return": "scalar or ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.unique",
+    "func_content": "np.unique(ar, return_counts=False)",
+    "func_desc": "找出数组中的唯一值",
+    "func_params": "ar, return_counts, return_index",
+    "func_return": "ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "np.zeros",
+    "func_content": "np.zeros(shape, dtype=float)",
+    "func_desc": "创建全零数组",
+    "func_params": "shape, dtype",
+    "func_return": "ndarray",
+    "is_safe": true,
+    "category": "numpy"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.DataFrame",
+    "func_content": "pd.DataFrame(data=None, index=None, columns=None)",
+    "func_desc": "创建 DataFrame 对象（二维表格数据结构）",
+    "func_params": "data, index, columns, dtype",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 核心"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.Series",
+    "func_content": "pd.Series(data=None, index=None, name=None)",
+    "func_desc": "创建 Series 对象（一维标记数组）",
+    "func_params": "data, index, name",
+    "func_return": "Series",
+    "is_safe": true,
+    "category": "pandas 核心"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.concat",
+    "func_content": "pd.concat(objs, axis=0, ignore_index=False)",
+    "func_desc": "沿轴拼接多个 DataFrame",
+    "func_params": "objs, axis, ignore_index, join",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 合并"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.crosstab",
+    "func_content": "pd.crosstab(index, columns, values=None, aggfunc=None, normalize=False)",
+    "func_desc": "创建交叉表（频率表）",
+    "func_params": "index, columns, values, aggfunc, normalize",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 重塑"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.cut",
+    "func_content": "pd.cut(x, bins, right=True, labels=None)",
+    "func_desc": "将连续值分箱为离散区间",
+    "func_params": "x, bins, right, labels",
+    "func_return": "Categorical",
+    "is_safe": true,
+    "category": "pandas 重塑"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.date_range",
+    "func_content": "pd.date_range(start=None, end=None, periods=None, freq='D')",
+    "func_desc": "生成固定频率的日期范围",
+    "func_params": "start, end, periods, freq, tz",
+    "func_return": "DatetimeIndex",
+    "is_safe": true,
+    "category": "pandas 时间"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.get_dummies",
+    "func_content": "pd.get_dummies(data, prefix=None, columns=None)",
+    "func_desc": "独热编码（One-Hot Encoding），将分类变量转为哑变量",
+    "func_params": "data, prefix, columns",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 重塑"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.melt",
+    "func_content": "pd.melt(frame, id_vars=None, value_vars=None, var_name=None, value_name='value')",
+    "func_desc": "将宽表转换为长表（逆透视）",
+    "func_params": "frame, id_vars, value_vars, var_name, value_name",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 重塑"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.merge",
+    "func_content": "pd.merge(left, right, how='inner', on=None, left_on=None, right_on=None)",
+    "func_desc": "合并两个 DataFrame（类似 SQL JOIN）",
+    "func_params": "left, right, how, on, left_on, right_on, suffixes",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 合并"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.pivot_table",
+    "func_content": "pd.pivot_table(data, values=None, index=None, columns=None, aggfunc='mean')",
+    "func_desc": "创建透视表",
+    "func_params": "data, values, index, columns, aggfunc, fill_value",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas 重塑"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.read_csv",
+    "func_content": "pd.read_csv(filepath, sep=',', header='infer', encoding=None)",
+    "func_desc": "读取 CSV 文件为 DataFrame",
+    "func_params": "filepath, sep, header, encoding, dtype, nrows, usecols, parse_dates",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas IO"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.read_excel",
+    "func_content": "pd.read_excel(io, sheet_name=0, header=0)",
+    "func_desc": "读取 Excel 文件为 DataFrame",
+    "func_params": "io, sheet_name, header, usecols",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas IO"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.read_json",
+    "func_content": "pd.read_json(path_or_buf, orient=None)",
+    "func_desc": "读取 JSON 文件为 DataFrame",
+    "func_params": "path_or_buf, orient",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas IO"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.read_sql",
+    "func_content": "pd.read_sql(sql, con)",
+    "func_desc": "执行 SQL 查询并返回 DataFrame",
+    "func_params": "sql, con, params",
+    "func_return": "DataFrame",
+    "is_safe": true,
+    "category": "pandas IO"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.to_datetime",
+    "func_content": "pd.to_datetime(arg, format=None, errors='raise')",
+    "func_desc": "将参数转换为 datetime 类型",
+    "func_params": "arg, format, errors, utc",
+    "func_return": "DatetimeIndex or Series",
+    "is_safe": true,
+    "category": "pandas 时间"
+  },
+  {
+    "func_type": "Python",
+    "func_name": "pd.to_numeric",
+    "func_content": "pd.to_numeric(arg, errors='raise')",
+    "func_desc": "将参数转换为数值类型，errors='coerce' 可转失败为 NaN",
+    "func_params": "arg, errors",
+    "func_return": "Series",
+    "is_safe": true,
+    "category": "pandas 转换"
+  }
+]

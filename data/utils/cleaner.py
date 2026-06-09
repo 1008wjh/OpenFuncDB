@@ -172,7 +172,7 @@ def dedup(items: list) -> list:
 
 def run_clean(input_path: str, output_path: str) -> list:
     print(f"\n{'='*50}")
-    print(f"🧹 数据清洗: {input_path}")
+    print(f" 数据清洗: {input_path}")
 
     with open(input_path, "r", encoding="utf-8") as f:
         raw = json.load(f)

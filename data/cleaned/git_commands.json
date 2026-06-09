@@ -1,0 +1,302 @@
+[
+  {
+    "func_type": "Git",
+    "func_name": "git add",
+    "func_content": "git add [OPTIONS] [FILE...]",
+    "func_desc": "将文件添加到暂存区。git add . 添加所有改动",
+    "func_params": "-A . -u -p --patch",
+    "func_return": "",
+    "is_safe": true,
+    "category": "工作区"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git bisect",
+    "func_content": "git bisect COMMAND",
+    "func_desc": "二分查找定位引入 bug 的提交。start → good/bad → 自动缩小范围",
+    "func_params": "start good bad reset skip log",
+    "func_return": "",
+    "is_safe": true,
+    "category": "调试"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git blame",
+    "func_content": "git blame [OPTIONS] FILE",
+    "func_desc": "查看文件每行的最后修改者和提交",
+    "func_params": "-L -e -l",
+    "func_return": "",
+    "is_safe": true,
+    "category": "历史查看"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git branch",
+    "func_content": "git branch [OPTIONS] [BRANCH]",
+    "func_desc": "管理分支。git branch 列出本地，-a 全部，-d 删除，new-branch 创建",
+    "func_params": "-a -d -D -m -r -v",
+    "func_return": "",
+    "is_safe": true,
+    "category": "分支管理"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git checkout",
+    "func_content": "git checkout [OPTIONS] BRANCH",
+    "func_desc": "切换分支或恢复文件。git checkout -b new-branch 创建并切换",
+    "func_params": "-b -B -- file",
+    "func_return": "",
+    "is_safe": true,
+    "category": "分支管理"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git cherry-pick",
+    "func_content": "git cherry-pick [OPTIONS] COMMIT...",
+    "func_desc": "将指定提交的改动应用到当前分支",
+    "func_params": "--no-commit --continue --abort",
+    "func_return": "",
+    "is_safe": true,
+    "category": "提交"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git clean",
+    "func_content": "git clean [OPTIONS]",
+    "func_desc": "删除未跟踪的文件。⚠️ 不可恢复！-n 预览，-f 强制，-d 包括目录",
+    "func_params": "-n -f -d -x",
+    "func_return": "",
+    "is_safe": false,
+    "category": "工作区"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git clone",
+    "func_content": "git clone REPOSITORY [DIRECTORY]",
+    "func_desc": "克隆远程仓库到本地。选项：--depth N 浅克隆，-b 指定分支",
+    "func_params": "--depth -b --single-branch",
+    "func_return": "",
+    "is_safe": true,
+    "category": "仓库管理"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git commit",
+    "func_content": "git commit [OPTIONS] [-m MSG]",
+    "func_desc": "将暂存区的改动提交到本地仓库。选项：-m 提交信息，-a 跳过 git add，--amend 修改上次提交",
+    "func_params": "-m -a --amend --no-verify",
+    "func_return": "",
+    "is_safe": true,
+    "category": "提交"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git config",
+    "func_content": "git config [OPTIONS] [NAME [VALUE]]",
+    "func_desc": "查看/设置 Git 配置。--global 全局，--local 当前仓库",
+    "func_params": "--global --local --list user.name user.email",
+    "func_return": "",
+    "is_safe": true,
+    "category": "配置"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git diff",
+    "func_content": "git diff [OPTIONS] [FILE...]",
+    "func_desc": "查看改动差异。git diff 工作区vs暂存，git diff --staged 暂存vs上次提交",
+    "func_params": "--staged --cached --name-only --stat",
+    "func_return": "",
+    "is_safe": true,
+    "category": "历史查看"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git fetch",
+    "func_content": "git fetch [REMOTE] [BRANCH]",
+    "func_desc": "从远程下载最新数据但不自动合并",
+    "func_params": "--all --prune -p",
+    "func_return": "",
+    "is_safe": true,
+    "category": "远程协作"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git init",
+    "func_content": "git init [DIRECTORY]",
+    "func_desc": "初始化一个新的 Git 仓库",
+    "func_params": "-b 初始分支名",
+    "func_return": "",
+    "is_safe": true,
+    "category": "仓库管理"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git log",
+    "func_content": "git log [OPTIONS]",
+    "func_desc": "查看提交历史。选项：--oneline 简洁，--graph 图形化，--author 按作者筛选",
+    "func_params": "--oneline --graph --all --author -N --since --until",
+    "func_return": "",
+    "is_safe": true,
+    "category": "历史查看"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git merge",
+    "func_content": "git merge [OPTIONS] BRANCH",
+    "func_desc": "将指定分支合并到当前分支",
+    "func_params": "--ff --no-ff --squash --abort",
+    "func_return": "",
+    "is_safe": true,
+    "category": "分支管理"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git mv",
+    "func_content": "git mv SOURCE DEST",
+    "func_desc": "移动或重命名文件并自动暂存",
+    "func_params": "-f",
+    "func_return": "",
+    "is_safe": true,
+    "category": "工作区"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git pull",
+    "func_content": "git pull [REMOTE] [BRANCH]",
+    "func_desc": "从远程拉取并合并到当前分支（= fetch + merge）",
+    "func_params": "--rebase --ff-only",
+    "func_return": "",
+    "is_safe": true,
+    "category": "远程协作"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git push",
+    "func_content": "git push [REMOTE] [BRANCH]",
+    "func_desc": "推送本地提交到远程仓库。git push -u origin main 首次推送并设置上游",
+    "func_params": "-u --force --all --tags",
+    "func_return": "",
+    "is_safe": true,
+    "category": "远程协作"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git rebase",
+    "func_content": "git rebase [OPTIONS] [BRANCH]",
+    "func_desc": "变基：将当前分支的提交移到目标分支之后。git rebase -i HEAD~3 交互式变基最近3次提交",
+    "func_params": "-i --onto --continue --abort --skip",
+    "func_return": "",
+    "is_safe": true,
+    "category": "分支管理"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git reflog",
+    "func_content": "git reflog [OPTIONS]",
+    "func_desc": "查看 HEAD 和分支引用的变更历史（找回误删的提交）",
+    "func_params": "show --all",
+    "func_return": "",
+    "is_safe": true,
+    "category": "调试"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git remote",
+    "func_content": "git remote [COMMAND]",
+    "func_desc": "管理远程仓库。git remote -v 查看，add 添加，remove 删除",
+    "func_params": "-v add remove rename set-url",
+    "func_return": "",
+    "is_safe": true,
+    "category": "远程协作"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git reset",
+    "func_content": "git reset [OPTIONS] [COMMIT]",
+    "func_desc": "重置当前 HEAD 到指定提交。--soft 保留改动，--hard 丢弃",
+    "func_params": "--soft --mixed --hard HEAD~N",
+    "func_return": "",
+    "is_safe": false,
+    "category": "撤销操作"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git restore",
+    "func_content": "git restore [OPTIONS] [FILE...]",
+    "func_desc": "恢复文件（Git 2.23+）。git restore file 丢弃工作区改动",
+    "func_params": "--staged --source",
+    "func_return": "",
+    "is_safe": true,
+    "category": "撤销操作"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git revert",
+    "func_content": "git revert [OPTIONS] COMMIT",
+    "func_desc": "创建新提交来撤销指定提交的改动（安全方式）",
+    "func_params": "-n --no-commit --no-edit",
+    "func_return": "",
+    "is_safe": true,
+    "category": "撤销操作"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git rm",
+    "func_content": "git rm [OPTIONS] FILE...",
+    "func_desc": "从工作区和暂存区删除文件。--cached 仅从暂存区移除",
+    "func_params": "--cached -r -f",
+    "func_return": "",
+    "is_safe": false,
+    "category": "工作区"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git stash",
+    "func_content": "git stash [COMMAND]",
+    "func_desc": "暂存工作区改动。git stash pop 恢复最近暂存，list 列出，drop 删除",
+    "func_params": "push pop list apply drop clear",
+    "func_return": "",
+    "is_safe": true,
+    "category": "工作区"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git status",
+    "func_content": "git status [OPTIONS]",
+    "func_desc": "查看工作区状态（修改/暂存/未跟踪文件）",
+    "func_params": "-s --short -b --branch",
+    "func_return": "",
+    "is_safe": true,
+    "category": "工作区"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git submodule",
+    "func_content": "git submodule COMMAND",
+    "func_desc": "管理子模块。add 添加，update --init --recursive 初始化更新",
+    "func_params": "add update --init --recursive status",
+    "func_return": "",
+    "is_safe": true,
+    "category": "仓库管理"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git switch",
+    "func_content": "git switch [OPTIONS] BRANCH",
+    "func_desc": "切换分支（Git 2.23+，推荐替代 checkout）。git switch -c new 创建并切换",
+    "func_params": "-c -C --detach",
+    "func_return": "",
+    "is_safe": true,
+    "category": "分支管理"
+  },
+  {
+    "func_type": "Git",
+    "func_name": "git tag",
+    "func_content": "git tag [OPTIONS] [TAG NAME]",
+    "func_desc": "管理标签。git tag v1.0 创建轻量标签，-a v1.0 -m 'msg' 附注标签",
+    "func_params": "-a -m -d -l",
+    "func_return": "",
+    "is_safe": true,
+    "category": "版本标记"
+  }
+]

@@ -72,4 +72,4 @@ if __name__ == "__main__":
     html = get_page_html()
     funcs = parse_functions_full(html)
     save_raw_data(funcs, OUTPUT_PATH)
-    print("\n🎉 第一步：官方数据抓取 —— 全部完成！")
+    print("\n 第一步：官方数据抓取 —— 全部完成！")
