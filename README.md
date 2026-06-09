@@ -26,7 +26,7 @@ python main.py
 curl -X POST http://localhost:8000/api/v1/auth/init-admin
 ```
 
-默认管理员账号：`admin` / `admin123`
+> 默认管理员账号密码请在 `.env` 中查看 `ADMIN_USERNAME` / `ADMIN_PASSWORD`，**生产环境务必修改**。
 
 ## 技术栈
 

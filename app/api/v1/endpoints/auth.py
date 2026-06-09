@@ -45,8 +45,8 @@ async def read_users_me(current_user: User = Depends(get_current_active_user)):
 @router.post("/init-admin")
 async def init_admin(db: Session = Depends(get_db)):
     """Initialize admin account. Safe to call multiple times — only creates if not exists."""
-    existing = user_crud.get_by_username(db, "admin")
+    existing = user_crud.get_by_username(db, settings.ADMIN_USERNAME)
     if existing:
         return ResponseBase(msg="Admin already exists")
-    user = user_crud.create_with_password(db, username="admin", password="admin123", auth_level="super_admin")
+    user = user_crud.create_with_password(db, username=settings.ADMIN_USERNAME, password=settings.ADMIN_PASSWORD, auth_level="super_admin")
     return ResponseBase(msg="Admin created successfully")

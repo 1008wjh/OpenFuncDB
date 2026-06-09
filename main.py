@@ -24,7 +24,7 @@ async def lifespan(app: FastAPI):
         admin = db.query(User).filter(User.username == "admin").first()
         if not admin:
             user_crud.create_with_password(
-                db, username="admin", password="admin123", auth_level="super_admin"
+                db, username=settings.ADMIN_USERNAME, password=settings.ADMIN_PASSWORD, auth_level="super_admin"
             )
     finally:
         db.close()

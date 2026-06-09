@@ -98,7 +98,7 @@ python main.py
 ### 5. 初始化管理员
 访问: `POST /api/v1/auth/init-admin`
 
-默认账号: `admin` / `admin123`
+管理员账号密码由环境变量 `ADMIN_USERNAME` / `ADMIN_PASSWORD` 配置，请创建后立即修改默认值。
 
 ## API 文档
 启动服务后访问: `http://127.0.0.1:8000/docs`

@@ -39,7 +39,7 @@
 ```bash
 curl -X POST http://localhost:8000/api/v1/auth/login \
   -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "username=admin&password=admin123"
+  -d "username=your_admin&password=your_password"
 ```
 
 #### 使用 Token 访问受保护接口

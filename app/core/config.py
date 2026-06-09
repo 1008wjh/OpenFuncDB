@@ -11,10 +11,13 @@ class Settings(BaseSettings):
     DB_PASSWORD: str = ""
     DB_NAME: str = "openfunc_db"
     
-    JWT_SECRET_KEY: str = "openfunc_db_2026_secret_key_change_in_production"
+    JWT_SECRET_KEY: str = "change_me_to_a_random_secret_key"
     JWT_ALGORITHM: str = "HS256"
     JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    
+
+    ADMIN_USERNAME: str = "admin"
+    ADMIN_PASSWORD: str = "change_me_admin_password"
+
     BACKEND_CORS_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173"
     
     @property
