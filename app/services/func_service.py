@@ -5,7 +5,6 @@ from sqlalchemy.orm import Session
 from app.crud.func import func_base_crud, func_category_crud, func_audit_crud
 from app.schemas.func import FuncBaseCreate, FuncBaseUpdate, FuncAuditCreate
 from app.schemas.common import PaginationResult
-from app.schemas.common import PaginationResult
 
 
 class FuncService:
