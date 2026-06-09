@@ -6,8 +6,13 @@ from app.db.session import SessionLocal
 from app.models.agent import AgentApiKey
 
 
-async def verify_agent_api_key(x_api_key: str = Header(..., alias="X-API-Key")) -> str:
+async def verify_agent_api_key(x_api_key: str = Header(None, alias="X-API-Key")) -> str:
     """验证 Agent API Key，返回 key_name"""
+    if not x_api_key:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Missing X-API-Key header",
+        )
     db: Session = SessionLocal()
     try:
         key_record = db.query(AgentApiKey).filter(
