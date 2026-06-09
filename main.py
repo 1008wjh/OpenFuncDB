@@ -14,6 +14,8 @@ from app.schemas.common import ResponseBase
 from app.crud.user import user_crud
 from app.models.user import User
 from app.models.func import FuncBase, FuncCategory, FuncCategoryRelation, FuncAudit
+from app.models.agent import AgentApiKey
+import secrets
 
 
 @asynccontextmanager
@@ -26,6 +28,21 @@ async def lifespan(app: FastAPI):
             user_crud.create_with_password(
                 db, username=settings.ADMIN_USERNAME, password=settings.ADMIN_PASSWORD, auth_level="super_admin"
             )
+        # Auto-create default agent API key
+        existing_key = db.query(AgentApiKey).filter(AgentApiKey.key_name == "default").first()
+        if not existing_key:
+            agent_key = AgentApiKey(
+                key_name="default",
+                api_key=secrets.token_hex(32),
+                is_active=True,
+            )
+            db.add(agent_key)
+            db.commit()
+            db.refresh(agent_key)
+            print(f"\n{'='*60}")
+            print(f"  Agent API Key (请保存): {agent_key.api_key}")
+            print(f"  使用方式: curl -H 'X-API-Key: {agent_key.api_key}' /api/v1/agent/tools")
+            print(f"{'='*60}\n")
     finally:
         db.close()
     yield
