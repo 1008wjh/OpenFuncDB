@@ -1,0 +1,274 @@
+[
+  {
+    "func_name": "abs",
+    "func_desc": "返回一个数字的绝对值。参数可以是整数、浮点数或任何实现了__abs__()的对象。如果参数是一个复数，则返回它的模。"
+  },
+  {
+    "func_name": "aiter",
+    "func_desc": "返回asynchronous iterable的asynchronous iterator。相当于调用x.__aiter__()。注意：与iter()不同，aiter()没有两个参数的版本。Added in version 3.10."
+  },
+  {
+    "func_name": "all",
+    "func_desc": "如果iterable的所有元素均为真值（或可迭代对象为空）则返回True。等价于:defall(iterable):forelementiniterable:ifnotelement:returnFalsereturnTrue"
+  },
+  {
+    "func_name": "awaitableanext",
+    "func_desc": "当进入 await 状态时，从给定asynchronous iterator返回下一数据项，迭代完毕则返回default。这是内置函数next()的异步版本，行为类似。调用async_iterator的__anext__()方法，返回一个awaitable。等待返回迭代器的下一个值。若有给出default，则在迭代完毕后会返回给出的值，否则会触发StopAsyncIteration.Added in version 3.10."
+  },
+  {
+    "func_name": "any",
+    "func_desc": "如果iterable的任一元素为真值则返回True。如果可迭代对象为空，返回False。等价于:defany(iterable):forelementiniterable:ifelement:returnTruereturnFalse"
+  },
+  {
+    "func_name": "ascii",
+    "func_desc": "与repr()类似，返回一个包含对象的可打印表示形式的字符串，但是使用\\x、\\u和\\U对repr()返回的字符串中非 ASCII 编码的字符进行转义。生成的字符串和 Python 2 的repr()返回的结果相似。"
+  },
+  {
+    "func_name": "bin",
+    "func_desc": "Convert an integer number to a binary string prefixed with \"0b\". The result is a valid Python expression. Ifintegeris not a Pythonintobject, it has to define an__index__()method that returns an integer. Some examples:>>>bin(3)'0b11'>>>bin(-10)'-0b1010'若要控制是否显示前缀“0b”，可以采用以下两种方案：>>>format(14,'#b'),format(14,'b')('0b1110', '1110')>>>f'{14:#b}',f'{14:b}'('0b1110', '1110')另请参见以补码表示负值的enum.bin()。另见format()获取更多信息。"
+  },
+  {
+    "func_name": "classbool",
+    "func_desc": "返回布尔值，即True或False中的一个。其参数将使用标准的真值测试过程来转换。 如果该参数为假值或被省略，则返回False；在其他情况下，将返回True。bool类是int的子类 (参见数字类型 --- int, float, complex)。它不能被继续子类化。它只有False和True这两个实例 (参见布尔类型 - bool)。在 3.7 版本发生变更:该形参现在为仅限位置形参。"
+  },
+  {
+    "func_name": "breakpoint",
+    "func_desc": "此函数会在调用位置进入调试器。具体来说，它将调用sys.breakpointhook()，直接传递args和kws。在默认情况下，sys.breakpointhook()将不带参数地调用pdb.set_trace()。 在此情况下，它纯粹是一个便捷函数让你不必显式地导入pdb或键入过多代码即可进入调试器。 不过，sys.breakpointhook()也可被设置为某些其他函数并被breakpoint()自动调用，允许你进入选定的调试器。如果sys.breakpointhook()不可用，此函数将引发RuntimeError.在默认情况下，breakpoint()的行为可使用PYTHONBREAKPOINT环境变量来改变。请参阅sys.breakpointhook()了解详细用法。请注意如果sys.breakpointhook()已被替换，则上述行为不一定有效。引发一个审计事件builtins.breakpoint并附带参数breakpointhook.Added in version 3.7."
+  },
+  {
+    "func_name": "classbytearray",
+    "func_desc": "返回一个新的 bytes 数组。bytearray类是一个可变序列，包含范围为 0 <= x < 256 的整数。它有可变序列大部分常见的方法，见可变序列类型的描述；同时有bytes类型的大部分方法，参见bytes 和 bytearray 操作。可选形参source可以用不同的方式来初始化数组：如果是一个string，您必须提供encoding参数（errors参数仍是可选的）；bytearray()会使用str.encode()方法来将 string 转变成 bytes。如果是一个integer，会初始化大小为该数字的数组，并使用 null 字节填充。如果是一个遵循缓冲区接口的对象，该对象的只读缓冲区将被用来初始化字节数组。如果是一个iterable可迭代对象，它的元素的范围必须是0<=x<256的整数，它会被用作数组的初始内容。如果没有实参，则创建大小为 0 的数组。另见二进制序列类型 --- bytes, bytearray, memoryview和bytearray 对象。"
+  },
+  {
+    "func_name": "classbytes",
+    "func_desc": "返回一个新的“bytes”对象，这是一个不可变序列，包含范围为0<=x<256的整数。bytes是bytearray的不可变版本——带有同样不改变序列的方法，支持同样的索引、切片操作。因此，构造函数的实参和bytearray()相同。字节对象还可以用字面值创建，参见字符串与字节串字面量。另见二进制序列类型 --- bytes, bytearray, memoryview，bytes 对象和bytes 和 bytearray 操作。"
+  },
+  {
+    "func_name": "callable",
+    "func_desc": "如果object参数是可调用的则返回True，否则返回False。如果返回True，调用仍可能失败，但如果返回False，则调用object肯定不会成功。 请注意类是可调用的（调用类将返回一个新的实例）；如果实例所属的类有__call__()方法则它就是可调用的。Added in version 3.2:这个函数一开始在 Python 3.0 被移除了，但在 Python 3.2 被重新加入。"
+  },
+  {
+    "func_name": "chr",
+    "func_desc": "返回表示指定 Unicode 码位对应字符的字符串。例如，chr(97)返回字符串'a'，而chr(8364)返回字符串'€'。此函数是ord()的逆操作。该参数的有效范围是 0 到 1,114,111（16 进制表示是 0x10FFFF）。如果超过这个范围，会引发ValueError异常。"
+  },
+  {
+    "func_name": "compile",
+    "func_desc": "将source编译成代码或 AST 对象。代码对象可以被exec()或eval()执行。source可以是常规的字符串、字节字符串，或者 AST 对象。参见ast模块的文档了解如何使用 AST 对象。filename实参需要是代码读取的文件名；如果代码不需要从文件中读取，可以传入一些可辨识的值 (经常会使用'<string>')。mode实参指定了编译代码必须用的模式。如果source是语句序列，可以是'exec'；如果是单一表达式，可以是'eval'；如果是单个交互式语句，可以是'single'。（在最后一种情况下，如果表达式执行结果不是None将会被打印出来。）可选参数flags和dont_inherit控制应当激活哪个编译器选项以及应当允许哪个future 特性。如果两者都未提供 (或都为零) 则代码会应用与调用compile()的代码相同的旗标来编译。如果给出了flags参数而未给出dont_inherit(或者为零) 则会在无论如何都将被使用的旗标之外还会额外使用flags参数所指定的编译器选项和 future 语句。如果dont_inherit为非零整数，则只使用flags参数 -- 外围代码中的旗标 (future 特性和编译器选项) 会被忽略。编译器选项和 future 语句是由比特位来指明的。比特位可以通过一起按位 OR 来指明多个选项。指明特定 future 特性所需的比特位可以在__future__模块的_Feature实例的compiler_flag属性中找到。编译器旗标可以在ast模块中查找带有PyCF_前缀的名称。optimize实参指定编译器的优化级别；默认值-1选择与解释器的-O选项相同的优化级别。显式级别为0(没有优化；__debug__为真)、1(断言被删除，__debug__为假) 或2(文档字符串也被删除)。如果编译的源码不可用则此函数将引发SyntaxError或ValueError。如果您想分析 Python 代码的 AST 表示，请参阅ast.parse()。引发一个审计事件compile附带参数source和filename。 此事件也可通过隐式编译来引发。备注在'single'或'eval'模式编译多行代码字符串时，输入必须以至少一个换行符结尾。这使code模块更容易检测语句的完整性。警告在将足够大或者足够复杂的字符串编译成 AST 对象时，Python 解释器有可能因为 Python AST 编译器的栈深度限制而崩溃。在 3.2 版本发生变更:Windows 和 Mac 的换行符均可使用。而且在'exec'模式下的输入不必再以换行符结尾了。另增加了optimize参数。在 3.5 版本发生变更:之前source中包含 null 字节的话会触发TypeError异常。Added in version 3.8:ast.PyCF_ALLOW_TOP_LEVEL_AWAIT现在可在旗标中传入以启用对最高层级await,asyncfor和asyncwith的支持。"
+  },
+  {
+    "func_name": "classcomplex",
+    "func_desc": "将特定的字符串或数字转换为一个复数，或基于特定的实部和虚部创建一个复数。示例：>>>complex('+1.23')(1.23+0j)>>>complex('-4.5j')-4.5j>>>complex('-1.23+4.5j')(-1.23+4.5j)>>>complex('\\t( -1.23+4.5J )\\n')(-1.23+4.5j)>>>complex('-Infinity+NaNj')(-inf+nanj)>>>complex(1.23)(1.23+0j)>>>complex(imag=-4.5)-4.5j>>>complex(-1.23,4.5)(-1.23+4.5j)如果该参数为字符串，则它必须包含一个实部（格式与float()接受格式相同）或一个虚部（与实部格式相同但带有'j'或'J'后缀），或者同时包含实部和虚部（在此情况下虚部必须加上正负号）。该字符串首尾可以被空白字符和圆括号'('及')'包裹，但它们会被忽略。该字符串中的'+','-','j'或'J'后缀以及十进制数字之间不可存在空格。 例如，complex('1+2j')是可以的，但complex('1+2j')则会引发ValueError。 更准确地说，输入在移除圆括号以及开头和末尾的空白字符之后，必须符合以下complexvalue产生式规则：complexvalue:floatvalue|floatvalue(\"j\"|\"J\") |floatvaluesignabsfloatvalue(\"j\"|\"J\")如果该参数为数字，则此构造器将进行与int和float类似的数值转换。对于一个普通的 Python 对象x，complex(x)会委托给x.__complex__()。如果未定义__complex__()则它将回退至__float__()。如果未定义__float__()则它将回退至__index__()。如果提供了两个参数或是使用了关键字参数，则每个参数可以为任意数字类型（包括复数）。如果两个参数均为实数值，则会返回一个实部为real而虚部为imag的复数。如果两个参数均为复数值，则会返回一个实部为real.real-imag.imag而虚部为real.imag+imag.real的复数。如果有一个参数为实数值，则上面的表达式中将只用到实部。另请参阅仅接受单个数字参数的complex.from_number()。如果省略所有参数，则返回0j。数字类型 --- int, float, complex描述了复数类型。在 3.6 版本发生变更:您可以使用下划线将代码文字中的数字进行分组。在 3.8 版本发生变更:如果__complex__()和__float__()均未定义则回退至__index__().自 3.14 版本弃用:以real或imag参数的形式传递复数现在已弃用；只能以单个位置参数传递。"
+  },
+  {
+    "func_name": "delattr",
+    "func_desc": "这是setattr()的相关函数。其参数是一个对象和一个字符串。其中字符串必须是对象的某个属性的名称。 该函数会删除指定的属性，如果对象允许这样做的话。例如，delattr(x,'foobar')等价于delx.foobar。name不要求必须是 Python 标识符 (参见setattr())。"
+  },
+  {
+    "func_name": "classdict",
+    "func_desc": "创建一个新的字典。dict对象是一个字典类。参见dict和Mapping Types --- dict了解这个类。其他容器类型，请参见内置的list、set和tuple类，以及collections模块。"
+  },
+  {
+    "func_name": "dir",
+    "func_desc": "如果没有实参，则返回当前本地作用域中的名称列表。如果有实参，它会尝试返回该对象的有效属性列表。如果对象有一个名为__dir__()的方法，则该方法将被调用并且必须返回由属性组成的列表。这允许实现自定义__getattr__()或__getattribute__()函数的对象能够定制dir()报告其属性的方式。如果对象未提供__dir__()，该函数会尽量从对象所定义的__dict__属性和其类型对象中收集信息。结果列表不一定是完整的，并且当对象具有自定义的__getattr__()时还可能是不准确的。默认的dir()机制对不同类型的对象行为不同，它会试图返回最相关而不是最全的信息：如果对象是模块对象，则列表包含模块的属性名称。如果对象是类型或类对象，则列表包含它们的属性名称，并且递归查找所有基类的属性。否则，列表包含对象的属性名称，它的类属性名称，并且递归查找它的类的所有基类的属性。返回的列表按字母表排序。例如：>>>importstruct>>>dir()# show the names in the module namespace['__builtins__', '__name__', 'struct']>>>dir(struct)# show the names in the struct module['Struct', '__all__', '__builtins__', '__cached__', '__doc__', '__file__','__initializing__', '__loader__', '__name__', '__package__','_clearcache', 'calcsize', 'error', 'pack', 'pack_into','unpack', 'unpack_from']>>>classShape:...def__dir__(self):...return['area','perimeter','location']...>>>s=Shape()>>>dir(s)['area', 'location', 'perimeter']备注因为dir()主要是为了便于在交互式时使用，所以它会试图返回人们感兴趣的名字集合，而不是试图保证结果的严格性或一致性，它具体的行为也可能在不同版本之间改变。例如，当实参是一个类时，metaclass 的属性不包含在结果列表中。"
+  },
+  {
+    "func_name": "divmod",
+    "func_desc": "接受两个（非复数）数字作为参数并返回由当对其使用整数除法时的商和余数组成的数字对。在混用不同的操作数类型时，则会应用二元算术运算符的规则。 对于整数来说，结果与(a//b,a%b)相同。对于浮点数来说则结果为(q,a%b)，其中q通常为math.floor(a/b)但可能会比它小 1。在任何情况下q*b+a%b都非常接近a，如果a%b为非零值则它将具有与b相同的正负号，并且0<=abs(a%b)<abs(b)。"
+  },
+  {
+    "func_name": "enumerate",
+    "func_desc": "返回一个枚举对象。iterable必须是一个序列，或iterator，或其他支持迭代的对象。enumerate()返回的迭代器的__next__()方法返回一个元组，里面包含一个计数值（从start开始，默认为 0）和通过迭代iterable获得的值。>>>seasons=['Spring','Summer','Fall','Winter']>>>list(enumerate(seasons))[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]>>>list(enumerate(seasons,start=1))[(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]等价于:defenumerate(iterable,start=0):n=startforeleminiterable:yieldn,elemn+=1"
+  },
+  {
+    "func_name": "eval",
+    "func_desc": "参数:source(str|code object) -- 一个 Python 表达式。globals(dict|None) -- 全局命名空间 (默认值:None)。locals(mapping|None) -- 局部命名空间 (默认值:None)。返回:被求值表达式的求值结果。引发:语法错误将作为异常被报告。警告此函数可执行任意代码。 调用它时附带用户提供的输入会导致安全弱点。source参数将作为一个 Python 表达式（从技术上说，是一个条件列表）使用globals和locals映射作为全局和局部命名空间被解析被求值。 如果globals字典存在并且不包含对应于__builtins__键的值，则在source被解析之前将会插入对应于该键的指向内置模块builtins的字典的引用。 可以使用重写__builtins__来限制或修改可用名称，但这不是一种安全的机制：被执行的代码仍然可以访问所有内置对象。 如果locals映射被省略则它将默认为globals字典。 如果两个映射都被省略，则将使用eval()被调用所在环境中的globals和locals来执行该表达式。 请注意，eval()将只能访问所在环境中的嵌套作用域(非局部作用域)，如果它们已经在调用eval()的作用域中被引用过的话（例如通过nonlocal语句）。示例：>>>x=1>>>eval('x+1')2该函数还可用于执行任意代码对象（比如由compile()创建的对象）。这时传入的是代码对象，而非一个字符串了。如果代码对象已用参数为mode的'exec'进行了编译，那么eval()的返回值将为None。提示：exec()函数支持语句的动态执行。globals()和locals()函数分别返回当前的全局和本地字典，可供传给eval()或exec()使用。如果给出的源数据是个字符串，那么其前后的空格和制表符将被剔除。用于执行仅包含字面值的表达式的函数参见ast.literal_eval()。引发一个审计事件exec附带代码对象作为参数。代码编译事件也可能被引发。在 3.13 版本发生变更:现在可以将globals和locals作为关键字参数传入。在 3.13 版本发生变更:默认locals命名空间的语义已被调整为与locals()内置函数的描述一致。"
+  },
+  {
+    "func_name": "exec",
+    "func_desc": "警告此函数可执行任意代码。 调用它时附带用户提供的输入会导致安全弱点。这个函数支持动态执行 Python 代码。source必须是字符串或代码对象。如果是字符串，那么该字符串将被解析为一组 Python 语句并随即被执行（除非发生语法错误）。[1]如果是代码对象，那么它将被直接执行。在所有情况下，被执行的代码都应当是有效的文件输入（见参考手册中的文件输入一节）。请注意即使是在传递给exec()函数的代码的上下文中nonlocal,yield和return语句也不可在函数定义以外使用。 函数的返回值为None。在所有情况下，如果省略了可选部分，代码将在当前作用域中执行。如果只提供了globals，则它必须是一个字典（并且不能是字典的子类），它将被同时用于全局和局部变量。如果给出了globals和locals，它们将被分别用于全局和局部变量。如果提供了locals，它可以是任何映射对象。请记住在模块层级上，globals 和 locals 是同一个字典。备注当exec获得两个不同的对象作为globals和locals时，代码被执行时就会像是嵌套在一个类定义中那样。 这意味着在被执行代码中定义的函数和类将无法访问在最高层级上赋值的变量（因为“最高层级”变量会被当作是类定义中的类变量来对待）。如果globals字典不包含__builtins__键值，则会为该键插入对内置模块builtins的字典的引用。 可以使用重写__builtins__来限制或修改可用名称，但这不是一种安全的机制：被执行的代码仍然可以访问所有内置对象。closure参数指定了一个闭包 —— 一个单元变量的元组。它只有在object是一个包含自由（闭包）变量的代码对象时才有效。元组的长度必须与代码对象的co_freevars属性的长度完全匹配。引发一个审计事件exec附带代码对象作为参数。代码编译事件也可能被引发。备注内置函数globals()和locals()分别返回当前的全局和局部字典，这在用作exec()的第二个和第三个参数进行传递时会很有用处。备注默认的locals行为与下面locals()函数所描述的一样。如果你需要在exec()返回之后查看代码对locals的影响可以显式地传入一个locals字典。在 3.11 版本发生变更:添加了closure参数。在 3.13 版本发生变更:现在可以将globals和locals作为关键字参数传入。在 3.13 版本发生变更:默认locals命名空间的语义已被调整为与locals()内置函数的描述一致。"
+  },
+  {
+    "func_name": "filter",
+    "func_desc": "使用iterable中function返回真值的元素构造一个迭代器。iterable可以是一个序列，一个支持迭代的容器或者一个迭代器。如果function为None，则会使用标识函数，也就是说，iterable中所有具有假值的元素都将被移除。请注意，filter(function,iterable)相当于一个生成器表达式，当 function 不是None的时候为(itemforiteminiterableiffunction(item))；function 是None的时候为(itemforiteminiterableifitem).请参阅itertools.filterfalse()来了解返回iterable中function返回假值的元素的补充函数。"
+  },
+  {
+    "func_name": "classfloat",
+    "func_desc": "返回基于一个数字或字符串构建的浮点数。示例：>>>float('+1.23')1.23>>>float('  -12345\\n')-12345.0>>>float('1e-003')0.001>>>float('+1E6')1000000.0>>>float('-Infinity')-inf如果该参数是一个字符串，则它应当包含一个十进制数字，前面可以选择带一个符号，也可以选择嵌入空格。可选的符号有'+'或'-'；'+'符号对所产生的值没有影响。该参数还可以是一个代表 NaN (not-a-number) 或者正负无穷大的字符串。 更确切地说，在移除前导和尾随的空格之后，输入必须为符合以下语法的floatvalue产生规则：sign:\"+\"|\"-\"infinity:\"Infinity\"|\"inf\"nan:\"nan\"digit:     <a Unicode decimal digit, i.e. characters in Unicode general category Nd>digitpart:digit([\"_\"]digit)*number:    [digitpart]\".\"digitpart|digitpart[\".\"]exponent:   (\"e\"|\"E\") [sign]digitpartfloatnumber:number[exponent]absfloatvalue:floatnumber|infinity|nanfloatvalue:  [sign]absfloatvalue大小写是无影响的，因此举例来说，\"inf\", \"Inf\", \"INFINITY\" 和 \"iNfINity\" 都是正无穷可接受的拼写形式。另一方面，如果参数是整数或浮点数，则返回一个具有相同值（在 Python 浮点精度范围内）的浮点数。如果参数超出了 Python 浮点数的取值范围，则会引发OverflowError。对于一个普通 Python 对象x，float(x)会委托给x.__float__()。如果__float__()未定义则将回退至__index__()。另请参见float.from_number()，它只接受数字参数。如果没有实参，则返回0.0。数字类型 --- int, float, complex描述了浮点类型。在 3.6 版本发生变更:您可以使用下划线将代码文字中的数字进行分组。在 3.7 版本发生变更:该形参现在为仅限位置形参。在 3.8 版本发生变更:如果__float__()未定义则回退至__index__()。"
+  },
+  {
+    "func_name": "format",
+    "func_desc": "将value转换为“格式化后”的形式，格式由format_spec进行控制。format_spec的解释方式取决于value参数的类型；但大多数内置类型使用一种标准的格式化语法：Format specification mini-language。默认的format_spec是一个空字符串，它通常给出与调用str(value)相同的结果。对format(value,format_spec)的调用会转写为type(value).__format__(value,format_spec)，这样在搜索值的__format__()方法时将绕过实例字典。如果方法搜索到达object并且format_spec不为空，或者如果format_spec或返回值不为字符串则会引发TypeError异常。在 3.4 版本发生变更:当format_spec不是空字符串时，object().__format__(format_spec)会触发TypeError."
+  },
+  {
+    "func_name": "classfrozenset",
+    "func_desc": "返回一个新的frozenset对象，它包含可选参数iterable中的元素。frozenset是一个内置的类。有关此类的文档，请参阅frozenset和集合类型 --- set, frozenset。请参阅内建的set、list、tuple和dict类，以及collections模块来了解其它的容器。"
+  },
+  {
+    "func_name": "getattr",
+    "func_desc": "返回object中指定名称的属性的值。name必须是字符串。如果该字符串是对象的某一属性的名称，则结果将为该属性的值。 例如，getattr(x,'foobar')等同于x.foobar。如果指定名称的属性不存在，则如果提供了default则返回该值，否则将引发AttributeError。name不必是一个 Python 标识符 (参见setattr()).备注由于私有名称混合发生在编译时，因此必须手动混合私有属性（以两个下划线打头的属性）名称以使用getattr()来提取它。"
+  },
+  {
+    "func_name": "globals",
+    "func_desc": "返回实现当前模块命名空间的字典。对于函数内的代码，这是在定义函数时设置的，无论函数在哪里被调用都保持不变。"
+  },
+  {
+    "func_name": "hasattr",
+    "func_desc": "该实参是一个对象和一个字符串。如果字符串是对象的属性之一的名称，则返回True，否则返回False。（此功能是通过调用getattr(object,name)看是否有AttributeError异常来实现的。）"
+  },
+  {
+    "func_name": "hash",
+    "func_desc": "返回该对象的哈希值（如果它有的话）。哈希值是整数。它们在字典查找元素时用来快速比较字典的键。相同大小的数字变量有相同的哈希值（即使它们类型不同，如 1 和 1.0）。备注对于具有自定义__hash__()方法的对象，请注意hash()会根据宿主机的字长来截断返回值。"
+  },
+  {
+    "func_name": "help",
+    "func_desc": "启动内置的帮助系统（此函数主要在交互式中使用）。如果没有实参，解释器控制台里会启动交互式帮助系统。如果实参是一个字符串，则在模块、函数、类、方法、关键字或文档主题中搜索该字符串，并在控制台上打印帮助信息。如果实参是其他任意对象，则会生成该对象的帮助页。请注意，如果在调用help()时，目标函数的形参列表中存在斜杠（/），则意味着斜杠之前的参数只能是位置参数。详情请参阅有关仅限位置形参的 FAQ 条目。该函数通过site模块加入到内置命名空间。在 3.4 版本发生变更:pydoc和inspect的变更使得可调用对象的签名信息更加全面和一致。"
+  },
+  {
+    "func_name": "hex",
+    "func_desc": "Convert an integer number to a lowercase hexadecimal string prefixed with \"0x\". Ifintegeris not a Pythonintobject, it has to define an__index__()method that returns an integer. Some examples:>>>hex(255)'0xff'>>>hex(-42)'-0x2a'如果要将整数转换为大写或小写的十六进制字符串，并可选择有无“0x”前缀，则可以使用如下方法：>>>'%#x'%255,'%x'%255,'%X'%255('0xff', 'ff', 'FF')>>>format(255,'#x'),format(255,'x'),format(255,'X')('0xff', 'ff', 'FF')>>>f'{255:#x}',f'{255:x}',f'{255:X}'('0xff', 'ff', 'FF')另见format()获取更多信息。另请参阅int()将十六进制字符串转换为以 16 为基数的整数。备注如果要获取浮点数的十六进制字符串形式，请使用float.hex()方法。"
+  },
+  {
+    "func_name": "id",
+    "func_desc": "返回对象的“标识值”。该值是一个整数，在此对象的生命周期中保证是唯一且恒定的。两个生命期不重叠的对象可能具有相同的id()值。这是对象在内存中的地址。引发一个审计事件builtins.id并附带参数id。"
+  },
+  {
+    "func_name": "input",
+    "func_desc": "如果存在prompt实参，则将其写入标准输出，末尾不带换行符。接下来，该函数从输入中读取一行，将其转换为字符串（除了末尾的换行符）并返回。当读取到 EOF 时，则触发EOFError。例如:>>>s=input('--> ')--> Monty Python's Flying Circus>>>s\"Monty Python's Flying Circus\"如果加载了readline模块，input()将使用它来提供复杂的行编辑和历史记录功能。在读取输入前引发一个审计事件builtins.input附带参数prompt在成功读取输入之后引发一个审计事件builtins.input/result附带结果。"
+  },
+  {
+    "func_name": "classint",
+    "func_desc": "返回从一个数字或字符串构建的整数对象，或者如果未给出参数则返回0。示例：>>>int(123.45)123>>>int('123')123>>>int('  -12_345\\n')-12345>>>int('FACE',16)64206>>>int('0xface',0)64206>>>int('01110011',base=2)115如果参数定义了__int__(),int(x)返回x.__int__()。如果参数定义了__index__()，则返回x.__index__()。对于浮点数，则向零截断。如果参数不是数字或者如果给定了base，则它必须是表示一个以base为基数的整数的字符串、bytes或bytearray实例。字符串前面还可选择加上+或-(中间没有空格)，带有前导的零，带有两侧的空格，以及带有数位之间的单个下划线。一个以 n 为基数的整数字符串包含多个数位，每个数位代表从 0 到 n-1 范围内的值。0--9 的值可以用任何 Unicode 十进制数码来表示。 10--35 的值可以用a到z(或A到Z) 来表示。默认的base为 10。允许的基数为 0 和 2--36。对于基数 2, -8 和 -16 来说字符串前面还能加上可选的0b/0B,0o/0O或0x/0X前缀，就像代码中的整数字面值那样。对于基数 0 来说，字符串会以与代码中的整数字面值类似的方式来解读，即实际的基数将由前缀确定为 2, 8, 10 或 16。基数为 0 还会禁用前导的零:int('010',0)将是无效的，而int('010')和int('010',8)则是有效的。整数类型定义请参阅数字类型 --- int, float, complex。在 3.4 版本发生变更:如果base不是int的实例，但base对象有base.__index__方法，则会调用该方法来获取进制数。以前的版本使用base.__int__而不是base.__index__。在 3.6 版本发生变更:您可以使用下划线将代码文字中的数字进行分组。在 3.7 版本发生变更:第一个形参现在是仅限位置形参。在 3.8 版本发生变更:如果__int__()未定义则回退至__index__()。在 3.11 版本发生变更:int字符串输入和字符串表示形式可受到限制以帮助避免拒绝服务攻击。当将一个字符串转换为int或者将一个int转换为字符串的操作超出限制时会引发ValueError。请参阅整数字符串转换长度限制文档。在 3.14 版本发生变更:int()不再委托给__trunc__()方法。"
+  },
+  {
+    "func_name": "isinstance",
+    "func_desc": "如果object参数是classinfo参数的实例，或者是其 (直接、间接或虚拟) 子类的实例则返回True。如果object不是给定类型的对象，则该函数总是返回False。如果classinfo是由类型对象结成的元组 (或是由其他此类元组递归生成) 或者是多个类型的union 类型，则如果object是其中任一类型的实例时将会返回True。如果classinfo不是一个类型或类型元组及此类元组，则会引发TypeError异常。如果之前的检查成功执行则可能不会为无效的类型引发TypeError。在 3.10 版本发生变更:classinfo可以是一个union 类型。"
+  },
+  {
+    "func_name": "issubclass",
+    "func_desc": "ReturnTrueifclassis a subclass (direct, indirect, orvirtual) ofclassinfo. A class is considered a subclass of itself.classinfomay be a tuple of class objects (or recursively, other such tuples) or aunion 类型, in which case returnTrueifclassis a subclass of any entry inclassinfo. In any other case, aTypeErrorexception is raised.在 3.10 版本发生变更:classinfo可以是一个union 类型。"
+  },
+  {
+    "func_name": "iter",
+    "func_desc": "返回一个iterator对象。第一个参数的解释方式会根据第二个参数是否存在而完全不同：若没有提供第二个参数，则该单一参数必须是一个支持iterable协议（即实现了__iter__()方法）的多项集对象，或者必须支持序列协议（即实现了以从0开始的整数参数调用的__getitem__()方法）。如果该参数既不支持可迭代协议也不支持序列协议，将会引发TypeError异常。如果提供了第二个参数sentinel，则第一个参数必须是一个可调用对象。 在这种情况下创建的迭代器会在每次调用其__next__()方法时，无参数地调用该可调用对象；如果返回的值等于sentinel，则会引发StopIteration异常，否则将返回该值。另请参阅迭代器类型。适合iter()的第二种形式的应用之一是构建块读取器。例如，从二进制数据库文件中读取固定宽度的块，直至到达文件的末尾:fromfunctoolsimportpartialwithopen('mydata.db','rb')asf:forblockiniter(partial(f.read,64),b''):process_block(block)"
+  },
+  {
+    "func_name": "len",
+    "func_desc": "返回对象的长度（元素个数）。实参可以是序列（如 string、bytes、tuple、list 或 range 等）或集合（如 dictionary、set 或 frozen set 等）。len对于大于sys.maxsize的长度如range(2**100)会引发OverflowError."
+  },
+  {
+    "func_name": "classlist",
+    "func_desc": "虽然被称为函数，list实际上是一种可变序列类型，详情请参阅列表和序列类型 --- list, tuple, range."
+  },
+  {
+    "func_name": "locals",
+    "func_desc": "返回一个代表当前局部符号表的映射对象，以变量名称作为键，而以其当前绑定的引用作为值。在模块作用域上，以及当附带单个命名空间使用exec()或eval()时，此函数将返回与globals()相同的命名空间。在类作用域上，它会返回将被传给元类构造器的命名空间。当附带不同的 local 和 global 参数使用exec()或eval()时，它将返回传入函数调用的 local 命名空间。在上述所有情况下，在一个给定的执行帧中对locals()的每次调用都将返回同一个映射对象。通过从locals()返回的映射对象所做的修改都将如局部变量的赋值、重新赋值或删除一样可见，而局部变量的赋值、重新赋值或删除都将立即影响所返回映射对象的内容。在一个optimized scope中（包括函数、生成器和协程），每个对locals()的调用将改为返回一个新字典，其中包含函数的局部变量及任何非局部单元引用的当前绑定。在此情况下，通过所返回字典对名称绑定的改变将不会写回到对应的局部变量或非局部单元引用，并且赋值、重新赋值或删除局部变量和非局部单元引用也不会影响之前返回的字典的内容。将locals()作为函数、生成器或协程中的一个推导式的组成部分来调用相当于在外层作用域中调用它，不同之处在于推导式所初始化的迭代变量将被包括在内。 在其他作用域下，其行为与将推导式作为嵌套函数来运行类似。将locals()作为生成器表达式的组成部分来调用相当于在嵌套的生成器函数中调用它。在 3.12 版本发生变更:在推导式中的locals()的行为已被更新为符合PEP 709中的描述。在 3.13 版本发生变更:作为PEP 667的组成部分，改变从此函数返回的映射对象的语义现在已获得定义。在已优化作用域中的行为现在如上所述。除了已获得定义，在其他作用域中的行为相比之前的版本仍然保持不变。"
+  },
+  {
+    "func_name": "map",
+    "func_desc": "返回一个将function应用于iterable的每个项目并产生其结果的迭代器。如果传递了额外的iterables参数，则function必须接受相同数量的参数，并将并行应用于所有可迭代对象中的项目。在有多个可迭代对象的情况下，迭代器会在最短的可迭代对象用尽后停止。 如果strict为True，且其中一个可迭代对象在其他之前耗尽，则引发ValueError。对于函数输入已排列成参数元组的情况，请参阅itertools.starmap()。在 3.14 版本发生变更:增加了strict形参。"
+  },
+  {
+    "func_name": "max",
+    "func_desc": "返回可迭代对象中最大的元素，或者返回两个及以上实参中最大的。如果只提供了一个位置参数，它必须是非空iterable，返回可迭代对象中最大的元素；如果提供了两个及以上的位置参数，则返回最大的位置参数。有两个可选只能用关键字的实参。key实参指定排序函数用的参数，如传给list.sort()的。default实参是当可迭代对象为空时返回的值。如果可迭代对象为空，并且没有给default，则会触发ValueError。如果有多个最大元素，则此函数将返回第一个找到的。这和其他稳定排序工具如sorted(iterable,key=keyfunc,reverse=True)[0]和heapq.nlargest(1,iterable,key=keyfunc)保持一致。在 3.4 版本发生变更:增加了default仅限关键字形参。在 3.8 版本发生变更:key可以为None。"
+  },
+  {
+    "func_name": "classmemoryview",
+    "func_desc": "返回由给定实参创建的“内存视图”对象。有关详细信息，请参阅内存视图。"
+  },
+  {
+    "func_name": "min",
+    "func_desc": "返回可迭代对象中最小的元素，或者返回两个及以上实参中最小的。如果只提供了一个位置参数，它必须是iterable，返回可迭代对象中最小的元素；如果提供了两个及以上的位置参数，则返回最小的位置参数。有两个可选只能用关键字的实参。key实参指定排序函数用的参数，如传给list.sort()的。default实参是当可迭代对象为空时返回的值。如果可迭代对象为空，并且没有给default，则会触发ValueError。如果有多个最小元素，则此函数将返回第一个找到的。这和其他稳定排序工具如sorted(iterable,key=keyfunc)[0]和heapq.nsmallest(1,iterable,key=keyfunc)保持一致。在 3.4 版本发生变更:增加了default仅限关键字形参。在 3.8 版本发生变更:key可以为None。"
+  },
+  {
+    "func_name": "next",
+    "func_desc": "通过调用iterator的__next__()方法获取下一个元素。如果迭代器耗尽，则返回给定的default，如果没有默认值则触发StopIteration。"
+  },
+  {
+    "func_name": "oct",
+    "func_desc": "Convert an integer number to an octal string prefixed with \"0o\". The result is a valid Python expression. Ifintegeris not a Pythonintobject, it has to define an__index__()method that returns an integer. For example:>>>oct(8)'0o10'>>>oct(-56)'-0o70'若要将整数转换为八进制字符串，并可选择是否带有“0o”前缀，可采用如下方法：>>>'%#o'%10,'%o'%10('0o12', '12')>>>format(10,'#o'),format(10,'o')('0o12', '12')>>>f'{10:#o}',f'{10:o}'('0o12', '12')另见format()获取更多信息。"
+  },
+  {
+    "func_name": "open",
+    "func_desc": "打开file并返回对应的file object。如果该文件不能被打开，则引发OSError。请参阅读写文件获取此函数的更多用法示例。file是一个path-like object，表示将要打开的文件的路径（绝对路径或者相对当前工作目录的路径），也可以是要封装文件对应的整数类型文件描述符。（如果给出的是文件描述符，则当返回的 I/O 对象关闭时它也会关闭，除非将closefd设为False。）mode是一个指明文件打开模式的可选字符串。它默认为'r'表示以文本模式读取。其他常见模式有表示写入的'w'(若文件已存在则将其清空)，表示独占创建的'x'，以及表示追加写入的'a'(在某些Unix 系统上，这意味着无论当前查找位置在哪里所有写入操作都将追加到文件末尾)。在文本模式下，如果未指定encoding则所使用的编码格式将依赖于具体平台：locale.getencoding()会被调用以获取当前语言区域的编码格式。 (对于读取和写入原始字节数据请使用二进制模式并且不要指定encoding。) 可用的模式有：字符含意'r'读取（默认）'w'写入，并先截断文件'x'排它性创建，如果文件已存在则失败'a'打开文件用于写入，如果文件存在则在末尾追加'b'二进制模式't'文本模式（默认）'+'打开用于更新（读取与写入）默认模式为'r'(打开文件用于读取文本，与'rt'同义)。'w+'和'w+b'模式将打开文件并清空内容。而'r+'和'r+b'模式将打开文件但不清空内容。正如在概述中提到的，Python 区分二进制和文本 I/O。以二进制模式打开的文件 (包括mode参数中的'b') 返回的内容为bytes对象，不进行任何解码。在文本模式下 (默认情况下，或者在mode参数中包含't') 时，文件内容返回为str，在有给定时使用给定的encoding或者使用平台默认的的编码格式进行解码。备注Python 不依赖于底层操作系统的文本文件概念；所有处理都由 Python 本身完成，因此与平台无关。buffering是一个可选的整数，用于设置缓冲策略。传入 0 来关闭缓冲（仅在二进制模式下允许），传入 1 来选择行缓冲（仅在文本模式下写入时可用），传一个整数 > 1 来表示固定大小的块缓冲区的字节大小。注意这样指定缓冲区的大小适用于二进制缓冲的 I/O，但TextIOWrapper(即用mode='r+'打开的文件) 会有另一种缓冲。要禁用TextIOWrapper中的缓冲，请考虑为io.TextIOWrapper.reconfigure()使用write_through旗标。当没有给出buffering参数时，默认的缓冲策略规则如下：二进制文件以固定大小的块缓冲；当设备块大小可用时，缓冲区的大小就是max(min(blocksize,8MiB),DEFAULT_BUFFER_SIZE)。在大多数系统中，缓冲区的长度通常为 128KB。“交互式”文本文件（isatty()返回True的文件）使用行缓冲。其他文本文件使用上述策略用于二进制文件。encoding是用于编码或解码文件的编码格式名称。这应当只有文本模式下使用。默认的编码格式依赖于具体平台 (即locale.getencoding()所返回的值)，但是任何 Python 支持的text encoding都可以被使用。请参阅codecs模块获取受支持的编码格式列表。errorsis an optional string that specifies how encoding and decoding errors are to be handled—this cannot be used in binary mode. A variety of standard error handlers are available (listed under错误处理方案), though any error handling name that has been registered withcodecs.register_error()is also valid. The standard names include:'strict'to raise aValueErrorexception if there is an encoding error. The default value ofNonehas the same effect.'ignore'ignores errors. Note that ignoring encoding errors can lead to data loss.'replace'causes a replacement marker (such as'?') to be inserted where there is malformed data.'surrogateescape'will represent any incorrect bytes as low surrogate code units ranging from U+DC80 to U+DCFF. These surrogate code units will then be turned back into the same bytes when thesurrogateescapeerror handler is used when writing data. This is useful for processing files in an unknown encoding.'xmlcharrefreplace'is only supported when writing to a file. Characters not supported by the encoding are replaced with the appropriate XML character reference&#nnn;.'backslashreplace'replaces malformed data by Python's backslashed escape sequences.'namereplace'(also only supported when writing) replaces unsupported characters with\\N{...}escape sequences.newline决定如何解析来自流的换行符。它可以为None,'','\\n','\\r'和'\\r\\n'。它的工作原理如下：从流中读取输入时，如果newline为None，则启用通用换行模式。输入中的行可以以'\\n'、'\\r'或'\\r\\n'结尾，这些行在返回给调用者之前会被转换为'\\n'。如果它是''，则启用通用换行模式，但行结尾将原样返回给调用者而不做转换。如果它具有任何其他合法值，则输入行仅由给定字符串终止，并且返回给调用者时行结尾不会被转换。将输出写入流时，如果newline为None，则写入的任何'\\n'字符都将转换为系统默认行分隔符os.linesep。如果newline是''或'\\n'，则不进行转换。如果newline是任何其他合法值，则写入的任何'\\n'字符将被转换为给定的字符串。如果closefd为False且给出的不是文件名而是文件描述符，那么当文件关闭时，底层文件描述符将保持打开状态。如果给出的是文件名，则closefd必须为True（默认值），否则将触发错误。可以通过传递可调用的opener来使用自定义开启器。然后通过使用参数（file，flags）调用opener获得文件对象的基础文件描述符。opener必须返回一个打开的文件描述符（使用os.openasopener时与传递None的效果相同）。新创建的文件是不可继承的。下面的示例使用os.open()函数的dir_fd的形参，从给定的目录中用相对路径打开文件:>>>importos>>>dir_fd=os.open('somedir',os.O_RDONLY)>>>defopener(path,flags):...returnos.open(path,flags,dir_fd=dir_fd)...>>>withopen('spamspam.txt','w',opener=opener)asf:...print('This will be written to somedir/spamspam.txt',file=f)...>>>os.close(dir_fd)# 不要泄漏文件描述符open()函数所返回的file object类型取决于所用模式。当使用open()以文本模式 ('w','r','wt','rt'等) 打开文件时，它将返回io.TextIOBase(具体为io.TextIOWrapper) 的一个子类。当使用缓冲以二进制模式打开文件时，返回的类是io.BufferedIOBase的一个子类。具体的类会有多种：在只读的二进制模式下，它将返回io.BufferedReader；在写入二进制和追加二进制模式下，它将返回io.BufferedWriter，而在读/写模式下，它将返回io.BufferedRandom。 当禁用缓冲时，则会返回原始流，即io.RawIOBase的一个子类io.FileIO。另请参阅文件操作模块，如fileinput、io(其中声明了open())、os、os.path、tempfile和shutil。引发一个审计事件open并附带参数path,mode,flags。mode与flags参数可以在原始调用的基础上被修改或传递。在 3.3 版本发生变更:增加了opener形参。增加了'x'模式。过去触发的IOError，现在是OSError的别名。如果文件已存在但使用了排它性创建模式 ('x')，现在会触发FileExistsError。在 3.4 版本发生变更:文件现在禁止继承。在 3.5 版本发生变更:如果系统调用被中断，但信号处理程序没有触发异常，此函数现在会重试系统调用，而不是触发InterruptedError异常 (原因详见PEP 475).增加了'namereplace'错误处理接口。在 3.6 版本发生变更:增加对实现了os.PathLike对象的支持。在 Windows 上，打开一个控制台缓冲区将返回io.RawIOBase的子类，而不是io.FileIO。在 3.11 版本发生变更:'U'模式已被移除。"
+  },
+  {
+    "func_name": "ord",
+    "func_desc": "返回字符的码序值。如果参数是单字符字符串，则返回该字符的 Unicode 码位。例如，ord('a')返回整数97，ord('€')(欧元符号) 返回8364。 此函数是chr()的逆操作。如果参数是长度为 1 的bytes或bytearray对象，则返回其单个字节值。例如，ord(b'a')返回整数97。"
+  },
+  {
+    "func_name": "pow",
+    "func_desc": "返回base的exp次幂；如果mod存在，则返回base的exp次幂对mod取余（比pow(base,exp)%mod更高效）。两参数形式pow(base,exp)等价于乘方运算符:base**exp。当参数为具有混用操作数类型的内置数字类型时，将应用针对二元算术运算符的强制转换规则。对于int操作数，结果具有与操作数相同的类型（转换之后）除非第二个参数为负值；在那种情况下，所有参数将被转换为浮点数并输出浮点数形式的结果。 例如，pow(10,2)返回100，而pow(10,-2)返回0.01。对于int或float的基数为负值而幂为非整数的情况，将产生一个复数形式的结果。例如，pow(-9,0.5)将返回一个接近3j的值。最后，对于int或float的基数为负值而幂为整数的情况，将产生一个浮点数形式的结果。 例如，pow(-9,2.0)将返回81.0。对于int操作数base和exp，如果给出mod，则mod必须为整数类型并且mod必须不为零。 如果给出mod并且exp为负值，则base必须与mod互素。在这种情况下，将会返回pow(inv_base,-exp,mod)，其中inv_base为base对mod的模逆元。下面的例子是38的倒数对97取余:>>>pow(38,-1,mod=97)23>>>23*38%97==1True在 3.8 版本发生变更:对于int操作数，三参数形式的pow现在允许第二个参数为负值，即可以计算倒数的余数。在 3.8 版本发生变更:允许关键字参数。之前只支持位置参数。"
+  },
+  {
+    "func_name": "print",
+    "func_desc": "将objects打印输出至file指定的文本流，以sep分隔并在末尾加上end。sep、end、file和flush必须以关键字参数的形式给出。所有非关键字参数都会被转换为字符串，就像是执行了str()一样，并会被写入到流，以sep分隔并在末尾加上end。sep和end都必须为字符串；它们也可以为None，这意味着使用默认值。如果没有给出objects，则print()将只写入end。file参数必须是一个具有write(string)方法的对象；如果参数不存在或为None，则将使用sys.stdout。由于要打印的参数会被转换为文本字符串，因此print()不能用于二进制模式的文件对象。 对于这些对象，应改用file.write(...)。输出缓冲通常由file确定。但是，如果flush为真值，流将被强制刷新。在 3.3 版本发生变更:增加了flush关键字参数。"
+  },
+  {
+    "func_name": "classproperty",
+    "func_desc": "返回 property 属性。fget是获取属性值的函数。fset是用于设置属性值的函数。fdel是用于删除属性值的函数。并且doc为属性对象创建文档字符串。一个典型的用法是定义一个托管属性x:classC:def__init__(self):self._x=Nonedefgetx(self):returnself._xdefsetx(self,value):self._x=valuedefdelx(self):delself._xx=property(getx,setx,delx,\"I'm the 'x' property.\")如果c为C的实例，c.x将调用 getter，c.x=value将调用 setter，delc.x将调用 deleter。如果给出，doc将成为该 property 属性的文档字符串。否则该 property 将拷贝fget的文档字符串（如果存在）。 这令使用property()作为decorator来创建只读的特征属性可以很容易地实现:classParrot:def__init__(self):self._voltage=100000@propertydefvoltage(self):\"\"\"Get the current voltage.\"\"\"returnself._voltage@property装饰器会将voltage()方法转化为一个具有相同名称的只读属性 \"getter\"，并将voltage的文档字符串设为 \"Get the current voltage.\"@getter¶@setter¶@deleter¶特征属性对象具有getter,setter和deleter方法，它们可用作装饰器来创建该特征属性的副本，并将相应的访问函数设为所装饰的函数。这最好是用一个例子来说明：classC:def__init__(self):self._x=None@propertydefx(self):\"\"\"I'm the 'x' property.\"\"\"returnself._x@x.setterdefx(self,value):self._x=value@x.deleterdefx(self):delself._x上述代码与第一个例子完全等价。注意一定要给附加函数与原始的特征属性相同的名称 (在本例中为x。)返回的特征属性对象同样具有与构造器参数相对应的属性fget,fset和fdel。在 3.5 版本发生变更:特征属性对象的文档字符串现在是可写的。__name__¶保存特征属性名称的属性。特性属性名称可在运行时被修改。Added in version 3.13."
+  },
+  {
+    "func_name": "classrange",
+    "func_desc": "虽然被称为函数，但range实际上是一个不可变的序列类型，参见在range 对象与序列类型 --- list, tuple, range中的文档说明。"
+  },
+  {
+    "func_name": "repr",
+    "func_desc": "返回包含一个对象的可打印表示形式的字符串。对于许多类型而言，此函数会尝试返回一个具有与传给eval()时相同的值的字符串；在其他情况下，其表示形式将为一个包含对象类型名称和通常包括对象名称和地址的额外信息的用尖括号括起来的字符串。一个类可以通过定义__repr__()方法来控制此函数为其实例所返回的内容。如果sys.displayhook()不可访问，则此函数将会引发RuntimeError。该类具有自定义的表示形式，它可被求值为:classPerson:def__init__(self,name,age):self.name=nameself.age=agedef__repr__(self):returnf\"Person('{self.name}',{self.age})\""
+  },
+  {
+    "func_name": "reversed",
+    "func_desc": "返回一个反向的iterator。该参数必须是一个具有__reversed__()方法或是支持序列协议（具有__len__()方法和从0开始的整数参数的__getitem__()方法）的对象。"
+  },
+  {
+    "func_name": "round",
+    "func_desc": "返回number舍入到小数点后ndigits位精度的值。如果ndigits被省略或为None，则返回最接近输入值的整数。对于支持round()方法的内置类型，结果值会舍入至最接近的 10 的负ndigits次幂的倍数；如果与两个倍数同样接近，则选用偶数。因此，round(0.5)和round(-0.5)均得出0而round(1.5)则为2。ndigits可为任意整数值（正数、零或负数）。如果省略了ndigits或为None，则返回值将为整数。否则返回值与number的类型相同。对于一般的 Python 对象number,round将委托给number.__round__。备注对浮点数执行round()的行为可能会令人惊讶：例如，round(2.675,2)将给出2.67而不是期望的2.68。这不算是程序错误：这一结果是由于大多数十进制小数实际上都不能以浮点数精确地表示。请参阅浮点算术：问题和限制了解更多信息。"
+  },
+  {
+    "func_name": "classset",
+    "func_desc": "返回一个新的set对象，可以选择带有从iterable获取的元素。set是一个内置类型。请查看set和集合类型 --- set, frozenset获取关于这个类的文档。有关其他容器请参看内置的frozenset,list,tuple和dict类，以及collections模块。"
+  },
+  {
+    "func_name": "setattr",
+    "func_desc": "本函数与getattr()相对应。其参数为一个对象、一个字符串和一个任意值。字符串可以为某现有属性的名称，或为新属性。只要对象允许，函数会将值赋给属性。如setattr(x,'foobar',123)等价于x.foobar=123。name无需为在名称（标识符和关键字）中定义的 Python 标识符除非对象选择强制这样做，例如在一个自定义的__getattribute__()中或是通过__slots__。 一个名称不为标识符的属性将不可使用点号标记来访问，但是可以通过getattr()等来访问。备注由于私有名称混合发生在编译时，因此必须手动混合私有属性（以两个下划线打头的属性）名称以便使用setattr()来设置它。"
+  },
+  {
+    "func_name": "classslice",
+    "func_desc": "返回一个表示由range(start,stop,step)指定的索引集的slice对象。start和step参数默认为None。当使用切片语法时也会生成切片对象。 例如:a[start:stop:step]或a[start:stop,i]。请参阅itertools.islice()了解另一种可返回iterator的版本。start¶stop¶step¶这些只读属性会被设为相应的参数值（或其默认值）。它们没有其他显式的功能；不过，它们会被 NumPy 和其他第三方包所使用。在 3.12 版本发生变更:Slice 对象现在将为hashable(如果start,stop和step均为可哈希对象)。"
+  },
+  {
+    "func_name": "sorted",
+    "func_desc": "根据iterable中的项返回一个新的已排序列表。具有两个可选参数，它们都必须指定为关键字参数。key指定带有单个参数的函数，用于从iterable的每个元素中提取用于比较的键 (例如key=str.lower)。默认值为None(直接比较元素)。reverse为一个布尔值。如果设为True，则每个列表元素将按反向顺序比较进行排序。使用functools.cmp_to_key()可将老式的cmp函数转换为key函数。内置的sorted()确保是稳定的。如果一个排序确保不会改变比较结果相等的元素的相对顺序就称其为稳定的 --- 这有利于进行多重排序（例如先按部门、再按薪级排序）。排序算法只使用<在条目间进行比较。虽然定义一个__lt__()方法就足以完成排序，但PEP 8建议实现所有六个富比较操作。这将有助于避免在与其他排序工具如max()使用相同的数据时出现程序缺陷，这些工具依赖于不同的底层方法。实现所有六个比较操作也有助于避免混合类型比较的混乱，因为混合类型比较可以调用反射的__gt__()方法。有关排序示例和简要排序教程，请参阅排序的技术。"
+  },
+  {
+    "func_name": "classstr",
+    "func_desc": "返回一个str版本的object。有关详细信息，请参阅str()。str是内置字符串class。更多关于字符串的信息查看文本序列类型 --- str。"
+  },
+  {
+    "func_name": "sum",
+    "func_desc": "从start开始自左向右对iterable的项求和并返回总计值。iterable的项通常为数字，而 start 值则不允许为字符串。对于某些用例，存在sum()的更好替代。拼接字符串序列的更好、更快的方式是调用''.join(sequence)。 要以扩展的精度执行浮点数值的求和，请参阅math.fsum()。要拼接一系列可迭代对象，请考虑使用itertools.chain().在 3.8 版本发生变更:start形参可用关键字参数形式来指定。在 3.12 版本发生变更:浮点数的求和已切换为一种可在大多数构建版本中给出更高精确度和更好适应性的算法。在 3.14 版本发生变更:添加了复数求和的特殊化，使用与浮点数求和相同的算法。"
+  },
+  {
+    "func_name": "classsuper",
+    "func_desc": "返回一个代理对象，它会将方法调用委托给type的父类或兄弟类。这对于访问已在类中被重写的继承方法很有用。object_or_type确定要用于搜索的method resolution order。搜索会从type之后的类开始。举例来说，如果object_or_type的__mro__为D->B->C->A->object并且type的值为B，则super()将会搜索C->A->object。对应于object_or_type的类的__mro__属性列出了getattr()和super()所共同使用的方法解析搜索顺序。该属性是动态的并可在任何继承层级结构更新时被改变。如果省略第二个参数，则返回的超类对象是未绑定的。如果第二个参数为一个对象，则isinstance(obj,type)必须为真值。 如果第二个参数为一个类型，则issubclass(type2,type)必须为真值（这适用于类方法）。当在类的某个普通方法中被直接调用时，这两个参数均可被省略 (即 \"零参数super()\")。 在此情况下，type将为其外层的类，而obj将为其所在函数的第一个参数 (通常为self)。 （这意味着零参数super()在嵌套的函数内的行为将不会如预期那样，这也包括生成器表达式，因为它会隐式地创建嵌套的函数。）super有两个典型用例。在具有单继承的类层级结构中，super可用来引用父类而不必显式地指定它们的名称，从而令代码更易维护。 这种用法与其他编程语言中super的用法非常相似。第二个用例是在动态执行环境中支持协作多重继承。此用例为 Python 所独有而不存在于静态编码语言或仅支持单继承的语言当中。 这使用实现“菱形图”成为可能，即有多个基类实现相同的方法。 好的设计强制要求这样的方法在每个情况下都具有相同的调用签名（因为调用顺序是在运行时确定的，也因为这个顺序要适应类层级结构的更改，还因为这个顺序可能包括在运行时之前未知的兄弟类）。对于以上两个用例，典型的超类调用看起来是这样的:classC(B):defmethod(self,arg):super().method(arg)# 它的作用像：# super(C, self).method(arg)除了方法查找之外，super()也可用于属性查找。一个可能的应用场合是在上级或同级类中调用描述器.请注意super()被实现为为显式的带点号属性查找的绑定过程的组成部分，例如super().__getitem__(name)。它做到这一点是通过实现自己的__getattribute__()方法以便能够按支持协作多重继承的可预测的顺序来搜索类。 相应地，super()在像super()[name]这样使用语句或运算符进行隐式查找时则是未定义的。还要注意的是，除了零个参数的形式以外，super()并不限于在方法内部使用。两个参数的形式明确指定参数并进行相应的引用。 零个参数的形式仅适用于类定义内部，因为编译器需要填入必要的细节以正确地检索到被定义的类，还需要让普通方法访问当前实例。对于有关如何使用super()来如何设计协作类的实用建议，请参阅使用 super() 的指南.在 3.14 版本发生变更:super对象现在是pickleable和copyable。"
+  },
+  {
+    "func_name": "classtuple",
+    "func_desc": "虽然被称为函数，但tuple实际上是一个不可变的序列类型，参见在元组与序列类型 --- list, tuple, range中的文档说明。"
+  },
+  {
+    "func_name": "classtype",
+    "func_desc": "传入一个参数时，返回object的类型。返回值是一个 type 对象并且通常与object.__class__所返回的对象相同。推荐使用isinstance()内置函数来检测对象的类型，因为它会考虑子类的情况。传入三个参数时，返回一个新的 type 对象。这在本质上是class语句的一种动态形式。name字符串即类名并会成为__name__属性；bases元组包含基类并会成为__bases__属性；如果为空，则会添加所有类的终极基类，即object。dict字典包含类体的属性和方法定义；它在成为__dict__属性之前可能会被拷贝或包装。下面两条语句会创建同样的type对象：>>>classX:...a=1...>>>X=type('X',(),dict(a=1))另请参阅：有关类的属性和方法的文档。类型对象提供给三参数形式的关键字参数会被传递给适当的元类机制 (通常为__init_subclass__())，相当于类定义中关键字 (除了metaclass) 的行为方式。另请参阅自定义类创建。在 3.6 版本发生变更:type的子类如果未重写type.__new__将不再能使用一个参数的形式来获取对象的类型。"
+  },
+  {
+    "func_name": "vars",
+    "func_desc": "返回模块、类、实例或任何其他具有__dict__属性的对象的__dict__属性。模块和实例这样的对象具有可更新的__dict__属性；但是，其他对象的__dict__属性可能会设置写入限制（例如，类会使用types.MappingProxyType来防止直接更新字典）。不带参数时，vars()的行为将类似于locals()。如果指定了一个对象但它没有__dict__属性（例如，当它所属的类定义了__slots__属性时）则会引发TypeError异常。在 3.13 版本发生变更:不带参数调用此函数的结果已被更新为与locals()内置函数的描述类似。"
+  },
+  {
+    "func_name": "zip",
+    "func_desc": "在多个迭代器上并行迭代，从每个迭代器返回一个数据项组成元组。示例:>>>foriteminzip([1,2,3],['sugar','spice','everything nice']):...print(item)...(1, 'sugar')(2, 'spice')(3, 'everything nice')更正式的说法：zip()返回元组的迭代器，其中第i个元组包含的是每个参数迭代器的第i个元素。不妨换一种方式认识zip(): 它会把行变成列，把列变成行。 这类似于矩阵转置。zip()是延迟执行的：直至迭代时才会对元素进行处理，比如for循环或放入list中。值得考虑的是，传给zip()的可迭代对象可能长度不同；有时是有意为之，有时是因为准备这些对象的代码存在错误。Python 提供了三种不同的处理方案：默认情况下，zip()在最短的迭代完成后停止。较长可迭代对象中的剩余项将被忽略，结果会裁切至最短可迭代对象的长度：>>>list(zip(range(3),['fee','fi','fo','fum']))[(0, 'fee'), (1, 'fi'), (2, 'fo')]通常zip()用于可迭代对象等长的情况下。这时建议用strict=True的选项。输出与普通的zip()相同:>>>list(zip(('a','b','c'),(1,2,3),strict=True))[('a', 1), ('b', 2), ('c', 3)]与默认行为不同，如果一个可迭代对象在其他几个之前被耗尽则会引发ValueError:>>>foriteminzip(range(3),['fee','fi','fo','fum'],strict=True):...print(item)...(0, 'fee')(1, 'fi')(2, 'fo')Traceback (most recent call last):...ValueError:zip() argument 2 is longer than argument 1如果未指定strict=True参数，所有导致可迭代对象长度不同的错误都会被抑制，这可能会在程序的其他地方表现为难以发现的错误。为了让所有的可迭代对象具有相同的长度，长度较短的可用常量进行填充。这可由itertools.zip_longest()来完成。极端例子是只有一个可迭代对象参数，zip()会返回一个一元组的迭代器。如果未给出参数，则返回一个空的迭代器。小技巧：可确保迭代器的求值顺序是从左到右的。这样就能用zip(*[iter(s)]*n,strict=True)将数据列表按长度 n 进行分组。这将重复相同的迭代器n次，输出的每个元组都包含n次调用迭代器的结果。这样做的效果是把输入拆分为长度为 n 的块。zip()与*运算符相结合可以用来拆解一个列表:>>>x=[1,2,3]>>>y=[4,5,6]>>>list(zip(x,y))[(1, 4), (2, 5), (3, 6)]>>>x2,y2=zip(*zip(x,y))>>>x==list(x2)andy==list(y2)True在 3.10 版本发生变更:增加了strict参数。"
+  },
+  {
+    "func_name": "__import__",
+    "func_desc": "备注与importlib.import_module()不同，这是一个日常 Python 编程中不需要用到的高级函数。此函数会由import语句唤起。它可以被替换 (通过导入builtins模块并赋值给builtins.__import__) 以便修改import语句的语义，但是强烈不建议这样做，因为使用导入钩子 (参见PEP 302) 通常更容易实现同样的目标，并且不会导致代码问题，因为许多代码都会假定所用的是默认实现。 同样也不建议直接使用__import__()而应该用importlib.import_module()。本函数会导入模块name，利用globals和locals来决定如何在包的上下文中解释该名称。fromlist给出了应从name模块中导入的对象或子模块的名称。标准的实现代码完全不会用到locals参数，只用到了globals用于确定import语句所在的包上下文。level指定是使用绝对还是相对导入。0(默认值) 意味着仅执行绝对导入。level为正数值表示相对于模块调用__import__()的目录，将要搜索的父目录层数 (详情参见PEP 328)。当name变量的形式为package.module时，通常将会返回最高层级的包（第一个点号之前的名称），而不是以name命名的模块。但是，当给出了非空的fromlist参数时，则将返回以name命名的模块。例如，语句importspam的结果将为与以下代码作用相同的字节码:spam=__import__('spam',globals(),locals(),[],0)语句importspam.ham的结果将为以下调用:spam=__import__('spam.ham',globals(),locals(),[],0)请注意在这里__import__()是如何返回顶层模块的，因为这是通过import语句被绑定到特定名称的对象。另一方面，语句fromspam.hamimporteggs,sausageassaus的结果将为_temp=__import__('spam.ham',globals(),locals(),['eggs','sausage'],0)eggs=_temp.eggssaus=_temp.sausage在这里，spam.ham模块会由__import__()返回。要导入的对象将从此对象中提取并赋值给它们对应的名称。如果您只想按名称导入模块（可能在包中），请使用importlib.import_module()在 3.3 版本发生变更:level的值不再支持负数（默认值也修改为 0）。在 3.9 版本发生变更:当使用了命令行参数-E或-I时，环境变量PYTHONCASEOK现在将被忽略。"
+  }
+]
